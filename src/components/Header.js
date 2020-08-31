@@ -1,55 +1,91 @@
-import React from "react";
-import { Typography, Avatar, Grid, Box } from "@material-ui/core";
-import Typed from "react-typed";
-import avatar from "../avatar.png";
-import { makeStyles } from "@material-ui/core/styles";
-import zIndex from "@material-ui/core/styles/zIndex";
+import React from 'react';
+import Typed from 'react-typed';
+import Delay from 'react-delay';
+import FadeIn from 'react-fade-in';
 
-// CSS STYLES
-const useStyles = makeStyles((theme) => ({
-  avatar: {
-    display: "block",
-    margin: "0.5rem auto",
-    width: theme.spacing(13),
-    height: theme.spacing(13),
-  },
-  title: {
-    color: "tomato",
-  },
-  subtitle: {
-    color: "tan",
-    marginBottom: "3rem",
-  },
-  typedContainer: {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%,-50%)",
-    width: "100vw",
-    textAlign: "center",
-    zIndex: 1,
-  },
-}));
-
-const Header = () => {
-  const classes = useStyles();
+function Header(props) {
   return (
-    <Box className={classes.typedContainer}>
-      <Avatar src={avatar} alt="Jacob Rodgers" className={classes.avatar} />
-      <Typography variant="h4" className={classes.title}>
-        <Typed strings={["Jacob Rodgers"]} typeSpeed={40} />
-      </Typography>
-      <br />
-      <Typography variant="h5" className={classes.subtitle}>
-        <Typed
-          strings={["React", "Python", "Rust", "Embedded", "Web Dev"]}
-          typeSpeed={40}
-          backSpeed={60}
-          loop={true}
-        />
-      </Typography>
-    </Box>
+    <>
+      <header id='home'>
+        <nav id='nav-wrap'>
+          <a className='mobile-btn' href='#nav-wrap' title='Show navigation'>
+            Show navigation
+          </a>
+          <a className='mobile-btn' href='#' title='Hide navigation'>
+            Hide navigation
+          </a>
+          <ul id='nav' className='nav'>
+            <li className='current'>
+              <a className='smoothscroll' href='#home'>
+                Home
+              </a>
+            </li>
+            <li>
+              <a className='smoothscroll' href='#about'>
+                About
+              </a>
+            </li>
+            <li>
+              <a className='smoothscroll' href='#resume'>
+                Resume
+              </a>
+            </li>
+            <li>
+              <a className='smoothscroll' href='#portfolio'>
+                Works
+              </a>
+            </li>
+            <li>
+              <a className='smoothscroll' href='#testimonials'>
+                Testimonials
+              </a>
+            </li>
+            <li>
+              <a className='smoothscroll' href='#contact'>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div className='row banner'>
+          <div className='banner-text'>
+            <h1 className='responsive-headline'>
+              <Typed
+                strings={[`I am ${props.resumeData.name}.`]}
+                typeSpeed={40}
+              />
+            </h1>
+            <FadeIn delay={2000} transitionDuration={800}>
+              <h3 style={{ color: '#fff', fontFamily: 'sans-serif ' }}>
+                I am a {props.resumeData.role}.
+                {props.resumeData.roleDescription}
+              </h3>
+            </FadeIn>
+            <hr />
+            <ul className='social'>
+              {props.resumeData.socialLinks &&
+                props.resumeData.socialLinks.map((item) => {
+                  return (
+                    <li key={item.name}>
+                      <a href={item.url} target='_blank'>
+                        <i className={item.className}></i>
+                      </a>
+                    </li>
+                  );
+                })}
+            </ul>
+          </div>
+        </div>
+
+        <p className='scrolldown'>
+          <a className='smoothscroll' href='#about'>
+            <i className='icon-down-circle'></i>
+          </a>
+        </p>
+      </header>
+    </>
   );
-};
+}
 
 export default Header;
