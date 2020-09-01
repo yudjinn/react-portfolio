@@ -285,6 +285,12 @@ ul#nav li.current a { color: #F06000; }
 /*----------------------------------------------*/
 /*	Skill Bars
 /*----------------------------------------------*/
+#resume_skills {
+   background: #fff;
+   padding-top: 90px;
+   padding-bottom: 72px;
+   overflow: hidden;
+}
 
 .bars {
 	width: 95%;
@@ -298,10 +304,12 @@ ul#nav li.current a { color: #F06000; }
 }
 .bars li {
    position: relative;
+   font: 18px 'opensans', sans-serif;
   	margin-bottom: 60px;
   	background: #ccc;
   	height: 42px;
-  	border-radius: 3px;
+   border-radius: 3px;
+
 }
 .bars li em {
 	font: 15px 'opensans-bold', sans-serif;
@@ -326,86 +334,113 @@ ul#nav li.current a { color: #F06000; }
    border-radius: 3px 0 0 3px;
 }
 
-.python {
-  	width: 80%;
-  	-moz-animation: photoshop 2s ease;
-  	-webkit-animation: photoshop 2s ease;
+.python:hover:before {
+   width: 0%
 }
-.reactjs {
-  	width: 55%;
-  	-moz-animation: illustrator 2s ease;
-  	-webkit-animation: illustrator 2s ease;
+.reactjs:hover:before {
+   width: 0%
 }
-.django {
-  	width: 75%;
-  	-moz-animation: wordpress 2s ease;
-  	-webkit-animation: wordpress 2s ease;
+.django:hover:before {
+   width: 0%
 }
-.html {
-  	width: 90%;
-  	-moz-animation: css 2s ease;
-  	-webkit-animation: css 2s ease;
+.html:hover:before {
+   width: 0%
 }
-.rust {
-  	width: 30%;
-  	-moz-animation: html5 2s ease;
-  	-webkit-animation: html5 2s ease;
+.rust:hover:before {
+   width: 0%
+}
+.python:hover {
+     width: 80%;
+  	-moz-animation: python 1s ease;
+  	-webkit-animation: python 1s ease;
+}
+.reactjs:hover {
+     width: 55%;
+  	-moz-animation: reactjs 1s ease;
+  	-webkit-animation: reactjs 1s ease;
+}
+.django:hover {
+     width: 75%;
+  	-moz-animation: django 1s ease;
+  	-webkit-animation: django 1s ease;
+}
+.html:hover {
+     width: 65%;     
+  	-moz-animation: html 1s ease;
+  	-webkit-animation: html 1s ease;
+}
+.rust:hover {
+     width: 30%;
+  	-moz-animation: rust 1s ease;
+  	-webkit-animation: rust 1s ease;
 }
 .jquery {
   	width: 50%;
-  	-moz-animation: jquery 2s ease;
-  	-webkit-animation: jquery 2s ease;
+  	-moz-animation: jquery 1s ease;
+  	-webkit-animation: jquery 1s ease;
 }
 
-@-moz-keyframes photoshop {
+@-moz-keyframes python {
   0%   { width: 0px;  }
-  100% { width: 60%;  }
+  100% { width: 80%;  }
 }
-@-moz-keyframes illustrator {
+@-moz-keyframes reactjs {
   0%   { width: 0px;  }
   100% { width: 55%;  }
 }
-@-moz-keyframes wordpress {
+@-moz-keyframes django {
   0%   { width: 0px;  }
-  100% { width: 50%;  }
+  100% { width: 75%;  }
 }
-@-moz-keyframes css {
+@-moz-keyframes html {
   0%   { width: 0px;  }
-  100% { width: 90%;  }
+  100% { width: 65%;  }
 }
-@-moz-keyframes html5 {
+@-moz-keyframes rust {
   0%   { width: 0px;  }
-  100% { width: 80%;  }
+  100% { width: 30%;  }
 }
 @-moz-keyframes jquery {
   0%   { width: 0px;  }
   100% { width: 50%;  }
 }
 
-@-webkit-keyframes photoshop {
+@-webkit-keyframes python {
   0%   { width: 0px;  }
-  100% { width: 60%;  }
+  100% { width: 80%;  }
 }
-@-webkit-keyframes illustrator {
+@-webkit-keyframes reactjs {
   0%   { width: 0px;  }
   100% { width: 55%;  }
 }
-@-webkit-keyframes wordpress {
+@-webkit-keyframes django {
   0%   { width: 0px;  }
-  100% { width: 50%;  }
+  100% { width: 75%;  }
 }
-@-webkit-keyframes css {
+@-webkit-keyframes html {
   0%   { width: 0px;  }
-  100% { width: 90%;  }
+  100% { width: 65%;  }
 }
-@-webkit-keyframes html5 {
+@-webkit-keyframes rust {
   0%   { width: 0px;  }
-  100% { width: 80%;  }
+  100% { width: 30%;  }
 }
 @-webkit-keyframes jquery {
   0%   { width: 0px;  }
   100% { width: 50%;  }
 }
+
+.ReactProgress_wrapper {
+   background: #F5F5F5;
+   position: relative;
+   height: 0.5rem;
+   width: 100%;
+ }
+ .ReactProgress_filler {
+   background: #7FFFD4;
+   height: 100%;
+   transition: width 0.8s ease-in;
+ }
 
 /* ------------------------------------------------------------------ */
 /* e. Portfolio Section

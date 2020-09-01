@@ -1,6 +1,5 @@
 import React from 'react';
 import Typed from 'react-typed';
-import Delay from 'react-delay';
 import FadeIn from 'react-fade-in';
 
 function Header(props) {
@@ -8,12 +7,12 @@ function Header(props) {
     <>
       <header id='home'>
         <nav id='nav-wrap'>
-          <a className='mobile-btn' href='#nav-wrap' title='Show navigation'>
+          {/* <a className='mobile-btn' href='#nav-wrap' title='Show navigation'>
             Show navigation
           </a>
           <a className='mobile-btn' href='#' title='Hide navigation'>
             Hide navigation
-          </a>
+          </a> */}
           <ul id='nav' className='nav'>
             <li className='current'>
               <a className='smoothscroll' href='#home'>
@@ -52,14 +51,13 @@ function Header(props) {
           <div className='banner-text'>
             <h1 className='responsive-headline'>
               <Typed
-                strings={[`I am ${props.resumeData.name}.`]}
+                strings={[`I am ${props.resumeData.name}...`]}
                 typeSpeed={40}
               />
             </h1>
             <FadeIn delay={2000} transitionDuration={800}>
               <h3 style={{ color: '#fff', fontFamily: 'sans-serif ' }}>
-                I am a {props.resumeData.role}.
-                {props.resumeData.roleDescription}
+                a {props.resumeData.role}.{props.resumeData.roleDescription}
               </h3>
             </FadeIn>
             <hr />

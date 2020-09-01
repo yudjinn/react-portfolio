@@ -1,7 +1,8 @@
 let resumeData = {
   imagebaseurl: '',
   name: 'Jacob Rodgers',
-  role: 'Fullstack and Embedded Systems Developer with Data Science Experience',
+  role:
+    'Fullstack developer with Data Science experience and a passion for Embedded Systems',
   linkedinId: 'jacob-rodgers',
   roleDescription: '',
   socialLinks: [
@@ -16,8 +17,7 @@ let resumeData = {
       className: 'fa fa-github',
     },
   ],
-  aboutme:
-    'Self-starter with the ability to solve problems and the tenacity to push through barriers.',
+  aboutme: 'Self-starter with the ability to solve problems.',
   address: 'Denver, Colorado',
   education: [
     {
@@ -41,18 +41,23 @@ let resumeData = {
   skills: [
     {
       skillname: 'Python',
+      value: 80,
     },
     {
       skillname: 'Reactjs',
+      value: 80,
     },
     {
       skillname: 'Django',
+      value: 80,
     },
     {
       skillname: 'HTML',
+      value: 80,
     },
     {
       skillname: 'Rust',
+      value: 80,
     },
   ],
   portfolio: [

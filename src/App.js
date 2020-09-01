@@ -4,16 +4,18 @@ import Header from './components/Header';
 import resumeData from './resumeData';
 import About from './components/About';
 import Footer from './components/Footer';
-import Contact from './components/Contact';
+// import Contact from './components/Contact';
 import Portfolio from './components/Portfolio';
 import Resume from './components/Resume';
+import ResumeSkills from './components/ResumeSkills';
 import Testimonials from './components/Testimonials';
-import Bounce from 'react-reveal/Bounce';
+import Slide from 'react-reveal/Slide';
 import VisibilitySensor from 'react-visibility-sensor';
 
 function App() {
   const [aboutVisible, setAboutVisible] = useState();
   const [resumeVisible, setResumeVisible] = useState();
+  const [resumeSkillsVisible, setResumeSkillsVisible] = useState();
   const [portfolioVisible, setPortfolioVisible] = useState();
 
   return (
@@ -24,33 +26,44 @@ function App() {
         delayedCall={true}
         intervalDelay={1000}
         partialVisibility={true}
-        offset={{ top: 150, bottom: 75 }}
+        offset={{ top: 150, bottom: 10 }}
       >
-        <Bounce left opposite duration={1000} when={aboutVisible}>
+        <Slide left opposite duration={1000} when={aboutVisible}>
           <About resumeData={resumeData} />
-        </Bounce>
+        </Slide>
       </VisibilitySensor>
       <VisibilitySensor
         onChange={setResumeVisible}
         delayedCall={true}
         intervalDelay={1000}
         partialVisibility={true}
-        offset={{ top: 150, bottom: 75 }}
+        offset={{ top: 150, bottom: 10 }}
       >
-        <Bounce right opposite duration={1000} when={resumeVisible}>
+        <Slide right opposite duration={1000} when={resumeVisible}>
           <Resume resumeData={resumeData} />
-        </Bounce>
+        </Slide>
+      </VisibilitySensor>
+      <VisibilitySensor
+        onChange={setResumeSkillsVisible}
+        delayedCall={true}
+        intervalDelay={1000}
+        partialVisibility={true}
+        offset={{ top: 150, bottom: 10 }}
+      >
+        <Slide right opposite duration={1000} when={resumeSkillsVisible}>
+          <ResumeSkills resumeData={resumeData} />
+        </Slide>
       </VisibilitySensor>
       <VisibilitySensor
         onChange={setPortfolioVisible}
         delayedCall={true}
         intervalDelay={1000}
         partialVisibility={true}
-        offset={{ top: 150, bottom: 75 }}
+        offset={{ top: 150, bottom: 10 }}
       >
-        <Bounce left opposite duration={1000} when={portfolioVisible}>
+        <Slide left opposite duration={1000} when={portfolioVisible}>
           <Portfolio resumeData={resumeData} />
-        </Bounce>
+        </Slide>
       </VisibilitySensor>
       <Testimonials resumeData={resumeData} />
       {/* <Contact resumeData={resumeData} /> */}
