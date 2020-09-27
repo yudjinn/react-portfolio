@@ -57,9 +57,9 @@ let resumeData = {
   ],
   portfolio: [
     {
-      name: 'project1',
-      description: 'mobileapp',
-      imgurl: 'images/portfolio/console.jpg',
+      name: 'onefit',
+      description: 'fitness focused web application',
+      imgurl: 'images/portfolio/onefit.png',
     },
     {
       name: 'project2',
